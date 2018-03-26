@@ -1,0 +1,15 @@
+# Fdb version 3
+["latex"] 1493844008 "thesis-template.tex" "thesis-template.dvi" "thesis-template" 1493844008
+  "/home/ashedko/.cache/texlive/texmf-var/web2c/pdftex/latex.fmt" 1493844008 719080 6014d0f1a44aa6a7d2a95b1e67558941 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/report.cls" 1459635588 22880 e7be6f7dd8c05d5108bf3a7d8cabe59a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo" 1459635588 8303 1d67e16498f00f63da792fab169302fc ""
+  "/usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty" 1315783907 205722 8027ed7ab2230086d647802c25f3ee42 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1488979921 31949 3ae02a131d161fd383f5b89f8ad0930c ""
+  "chapters/thesis-template-macro.tex" 1493843853 7154 97b4dae24df43653d88bff91951719e0 ""
+  "polyglossia.sty" 0 -1 0 ""
+  "thesis-template.aux" 1490740364 8508 02b3d66c6022a4c8ad4391910048eb10 ""
+  "thesis-template.tex" 1490739723 2408 52c0feb177bd5f508b1312ce45abd9b3 ""
+  (generated)
+  "thesis-template.dvi"
+  "thesis-template.log"

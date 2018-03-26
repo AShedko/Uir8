@@ -1,0 +1,229 @@
+\setlength\paperheight{297mm}
+\setlength\paperwidth{210mm}
+
+
+\usepackage{polyglossia}
+\setmainlanguage[numerals=cyrillic]{russian}
+\setotherlanguages{english}
+
+\usepackage{xunicode} % some extra unicode support
+%\usepackage[utf8x]{inputenc}
+\usepackage{xltxtra} % \XeLaTeX macro
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+% Шрифты
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+\setmonofont{Courier New}
+
+% нумерация справа и колонтитулы справа вверху
+\usepackage{fancyhdr}
+\usepackage[left=25mm,right=10mm,top=20mm,bottom=20mm,bindingoffset=0cm]{geometry}%
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{indentfirst}
+\usepackage[unicode=true]{hyperref}
+\usepackage{color}
+\usepackage{pgf}
+
+\usepackage{pstheorems}
+
+% Настройка списков (без лишних вертикальных отступов)
+\usepackage{paralist}
+\setdefaultenum{1.}{1.}{1.}{1.}
+\setdefaultitem{--}{}{}{}
+%\setlength\itemsep{-1em}
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
+\pltopsep=\smallskipamount
+\plitemsep=0pt
+\plparsep=0pt
+% Команда для отмены разрыва страниц перед списками
+\makeatletter 
+\newcommand\mynobreakpar{\par\nobreak\@afterheading} 
+\makeatother
+%%%%%%
+
+\usepackage[singlelinecheck=false,labelsep=endash]{caption}
+\captionsetup[table]{justification=justified}
+\captionsetup[figure]{justification=centering}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\centering\normalfont\Large\bfseries}{\thechapter.}{1ex}{}{}
+\titlespacing{\chapter}{0pt}{0em}{2em}
+
+\titleformat{\section}[block]{\normalfont\large\bfseries}{\thesection}{1ex}{}{}
+\titlespacing{\section}{0pt}{0em}{1ex}
+
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\thesubsection}{1ex}{}{}
+\titlespacing{\section}{0pt}{0em}{1ex}
+
+	% paragraph и subparagraph -- в тексте, без отступов
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{0pt}{}{}
+\titlespacing{\paragraph}{0pt}{0em}{0ex}
+
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{\thesubparagraph}{0pt}{}{}
+\titlespacing{\subparagraph}{0pt}{0em}{0ex}
+
+
+% Своё название для оглавления
+\usepackage[title, titletoc]{appendix}
+\addto\captionsrussian{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{Содержание}%
+}
+
+%\renewcommand{\appendixname}{Приложение}% Change "chapter name" for Appendix chapters
+%\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+\usepackage{mathpartir}
+
+\makeatletter
+\let\ps@plain\ps@fancy              % Подчиняем первые страницы каждой главы общим правилам
+\makeatother
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\baselinestretch}{1.5}
+\newcommand{\headertext}[1]{\fancyhead[R]{\tiny{#1}}}
+
+%% Список литературы
+
+\makeatletter
+\bibliographystyle{ugost2008}     % Оформляем список литературы по ГОСТ 7.1
+% (ГОСТ Р 7.0.11-2011, 5.6.7)
+\renewcommand{\@biblabel}[1]{#1.}   % Заменяем список литературы с квадратных
+% скобок на точку
+\makeatother
+
+%\frenchspacing %% изменение расстояние до и после точек в ряде случаев
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\theenumiii}{\arabic{enumiii}}
+\renewcommand{\theenumiv}{\arabic{enumiv}}
+
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelenumii}{\theenumi.\theenumii.}
+\renewcommand{\labelenumiii}{\theenumi.\theenumii.\theenumiii.}
+\renewcommand{\labelenumiv}{\theenumi.\theenumii.\theenumiii.\theenumiv.}
+
+%\newenvironment{annotation}{\textbf{Аннотация.} \textit}{}
+\theoremstyle{plain}
+\newtheorem*{annotation}{Аннотация}
+
+\usepackage{listingsutf8}
+
+\renewcommand{\lstlistingname}{Листинг}
+
+\lstset{
+  basicstyle=\linespread{0.94}\ttfamily\small,
+  tabsize=2,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  breaklines=true,
+  breakatwhitespace=true,
+  framesep=6pt,
+  abovecaptionskip=1em,
+  captionpos=b,
+  extendedchars=true,
+  inputencoding=utf8,
+  literate={Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+  {~}{{\textasciitilde}}1
+  {а}{{\selectfont\char224}}1
+  {б}{{\selectfont\char225}}1
+  {в}{{\selectfont\char226}}1
+  {г}{{\selectfont\char227}}1
+  {д}{{\selectfont\char228}}1
+  {е}{{\selectfont\char229}}1
+  {ё}{{\"e}}1
+  {ж}{{\selectfont\char230}}1
+  {з}{{\selectfont\char231}}1
+  {и}{{\selectfont\char232}}1
+  {й}{{\selectfont\char233}}1
+  {к}{{\selectfont\char234}}1
+  {л}{{\selectfont\char235}}1
+  {м}{{\selectfont\char236}}1
+  {н}{{\selectfont\char237}}1
+  {о}{{\selectfont\char238}}1
+  {п}{{\selectfont\char239}}1
+  {р}{{\selectfont\char240}}1
+  {с}{{\selectfont\char241}}1
+  {т}{{\selectfont\char242}}1
+  {у}{{\selectfont\char243}}1
+  {ф}{{\selectfont\char244}}1
+  {х}{{\selectfont\char245}}1
+  {ц}{{\selectfont\char246}}1
+  {ч}{{\selectfont\char247}}1
+  {ш}{{\selectfont\char248}}1
+  {щ}{{\selectfont\char249}}1
+  {ъ}{{\selectfont\char250}}1
+  {ы}{{\selectfont\char251}}1
+  {ь}{{\selectfont\char252}}1
+  {э}{{\selectfont\char253}}1
+  {ю}{{\selectfont\char254}}1
+  {я}{{\selectfont\char255}}1
+  {А}{{\selectfont\char192}}1
+  {Б}{{\selectfont\char193}}1
+  {В}{{\selectfont\char194}}1
+  {Г}{{\selectfont\char195}}1
+  {Д}{{\selectfont\char196}}1
+  {Е}{{\selectfont\char197}}1
+  {Ё}{{\"E}}1
+  {Ж}{{\selectfont\char198}}1
+  {З}{{\selectfont\char199}}1
+  {И}{{\selectfont\char200}}1
+  {Й}{{\selectfont\char201}}1
+  {К}{{\selectfont\char202}}1
+  {Л}{{\selectfont\char203}}1
+  {М}{{\selectfont\char204}}1
+  {Н}{{\selectfont\char205}}1
+  {О}{{\selectfont\char206}}1
+  {П}{{\selectfont\char207}}1
+  {Р}{{\selectfont\char208}}1
+  {С}{{\selectfont\char209}}1
+  {Т}{{\selectfont\char210}}1
+  {У}{{\selectfont\char211}}1
+  {Ф}{{\selectfont\char212}}1
+  {Х}{{\selectfont\char213}}1
+  {Ц}{{\selectfont\char214}}1
+  {Ч}{{\selectfont\char215}}1
+  {Ш}{{\selectfont\char216}}1
+  {Щ}{{\selectfont\char217}}1
+  {Ъ}{{\selectfont\char218}}1
+  {Ы}{{\selectfont\char219}}1
+  {Ь}{{\selectfont\char220}}1
+  {Э}{{\selectfont\char221}}1
+  {Ю}{{\selectfont\char222}}1
+  {Я}{{\selectfont\char223}}1
+  {…}{\ldots}1
+  {–}{-}1
+  {\ }{ }1
+}

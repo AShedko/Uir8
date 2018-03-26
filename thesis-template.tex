@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper,oneside,final]{report}
+%\documentclass[12pt]{rusthesis}
+
+\input{chapters/thesis-template-macro.tex}
+\input{chapters/thesis-template-macro-my.tex}
+
+
+\headertext{}
+
+\addto{\captionsrussian}{\renewcommand{\bibname}{Список литературы}}
+
+\begin{document}
+
+%\pagenumbering{gobble}
+\pagenumbering{arabic}
+
+\includepdf[pages={-}, offset=0mm -0mm]{title/title.pdf}
+
+\clearpage
+% Тут включается лист с подписями для ВКР
+\includepdf[pages={-}, offset=0mm -0mm]{title/title-dep22.pdf}
+\clearpage
+
+\includepdf[pages={-}, offset=0mm -0mm]{title/task.pdf}
+
+
+%\clearpage
+%\thispagestyle{empty}
+
+%\vfill
+
+%\begin{center}
+%[Место для распечатки отчета Антиплагиата]
+%\end{center}
+
+%\newpage
+%\thispagestyle{empty}
+
+%\vfill
+
+%\begin{center}
+%[Место для распечатки отчета Антиплагиата]
+%\end{center}
+
+\clearpage
+
+\input{chapters/thesis-template-abstract.tex}
+
+\clearpage
+
+\tableofcontents{}
+
+\clearpage
+
+\input{chapters/thesis-template-intro.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-chapter1.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-chapter2.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-chapter3.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-chapter4.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-conclusion.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-bibl.tex}
+
+\clearpage
+
+%\chapter*{Приложения}
+%\addcontentsline{toc}{chapter}{Приложения}
+%\appendixtocon
+%\renewcommand{\appendixname}{Приложение}
+\appendix
+\renewcommand{\appendixtocname}{Приложения}
+\addappheadtotoc
+%\titleformat{\chapter}[block]{\centering\normalfont\Large\bfseries}{\chaptername{} \thechapter.}{1ex}{}{}
+\renewcommand{\chaptername}{Приложение}
+%\renewcommand*\printchaptername{\Large\bfseries\appendixname~}
+%\renewcommand{\thechapter}{Приложение \Alph{chapter}}
+%\renewcommand{\thechaptertoc}{Приложение \Alph{chapter}}
+
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+
+%\begin{appendices}
+
+\input{chapters/thesis-template-appendix1.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-appendix2.tex}
+
+\clearpage
+
+\input{chapters/thesis-template-appendix3.tex}
+
+%\end{appendices}
+
+\end{document}
+
+
+

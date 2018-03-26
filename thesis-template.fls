@@ -1,0 +1,15 @@
+PWD /home/ashedko/Projects/Tex/UIR_pz/thesis-template
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /home/ashedko/.cache/texlive/texmf-var/web2c/pdftex/latex.fmt
+INPUT thesis-template.tex
+OUTPUT thesis-template.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT chapters/thesis-template-macro.tex
+INPUT chapters/thesis-template-macro.tex
+INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty
