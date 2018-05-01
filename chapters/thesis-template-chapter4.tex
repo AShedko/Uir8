@@ -54,7 +54,13 @@ myList.Append(myElement);
 
 \subsection{Эксперимент с 1 изображением}
 
-%TODO Write 1 img edxperiment
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth]{res1im}
+	\caption{Результат обучения модели с resNet18 по 1 изображению}
+	\label{fig:res1im}
+\end{figure}
+
 
 \subsection{Эксперимент с альбомом} Мы сравниваем эту модель с моделью и базовый уровень, который просто усредняет прогнозы single-imagePlaNet всех изображений в альбоме и назначает
 среднее для всех изображений. Усреднение в альбомах ($ \mathcal{G}= \mathbb{E}[ \mathcal{F}(X) ] $) уже
