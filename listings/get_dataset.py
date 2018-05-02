@@ -35,7 +35,7 @@ FAILED_DOWNLOAD_IMAGE_SIZE = 3464
 
 # place key in a file in the Geo-Localization directory 
 # as the only text in the file on one line
-KEY_FILEPATH = "/home/ashedko/Projects/UIR/im2gps/LittlePlaNet/api_key.key"
+KEY_FILEPATH = "../api_key.key"
 API_KEY = file_utils.load_key(KEY_FILEPATH)
 GOOGLE_URL = ("http://maps.googleapis.com/maps/api/streetview?"
               "size=256x256&fov=120&pitch=10&key=" + API_KEY)
@@ -53,21 +53,29 @@ def download_images_for_city(city, lat, lon):
     while num_imgs < 100:
         
         # randomly select latitude and longitude in the city
-        brng = math.radians(random.uniform(0, 360)) # bearing is 90 degrees converted to radians.
+	# bearing is 90 degrees converted to radians.
+        brng = math.radians(random.uniform(0, 360)) 
         d = random.uniform(0, IMAGE_RADIUS)
-        lat_rad = math.radians(lat) # current lat point converted to radians
-        lon_rad = math.radians(lon) # current long point converted to radians
+	# current lat point converted to radians
+        lat_rad = math.radians(lat)
+	# current long point converted to radians
+        lon_rad = math.radians(lon) 
         rand_lat = math.asin(math.sin(lat_rad)*math.cos(d/R) +
-                        math.cos(lat_rad)*math.sin(d/R)*math.cos(brng))
-        rand_lon = lon_rad + math.atan2(math.sin(brng)*math.sin(d/R)*math.cos(lat_rad),
+			math.cos(lat_rad)*math.sin(d/R)*math.cos(brng))
+        rand_lon = lon_rad + math.atan2(
+			math.sin(brng)*math.sin(d/R)*math.cos(lat_rad),
                         math.cos(d/R)-math.sin(lat_rad)*math.sin(rand_lat))
         rand_lat = math.degrees(rand_lat)
         rand_lon = math.degrees(rand_lon)
         
         # download image
-        filename = 'lat-{}-lon-{}.jpg'.format(round(rand_lat, 4), round(rand_lon, 4))
+        filename = 'lat-{}-lon-{}.jpg'.
+			format(round(rand_lat, 4), round(rand_lon, 4))
         filepath = os.path.join(cur_directory, filename)
-        url = GOOGLE_URL + "&location=" + str(rand_lat) + ","+ str(rand_lon)+"&heading="+str(brng)
+        url = GOOGLE_URL +
+	    "&location=" + 
+	   str(rand_lat) + "," +
+	   str(rand_lon) + "&heading=" + str(brng)
         res = urllib.request.urlretrieve(url, filepath)
 
         # check if the downloaded image was invalid and if so remove it
